@@ -1,0 +1,87 @@
+@use "../../../styles/_variables" as v;
+
+.details {
+  background: v.$background;
+  border-radius: 3px;
+  filter: drop-shadow(0px 4px 8px rgba(84, 110, 122, 0.24));
+  width: 684px;
+  overflow: hidden;
+
+  &[open] {
+    summary {
+      .secondSummaryElement {
+        span {
+          svg {
+            transform: rotate(180deg);
+          }
+        }
+      }
+    }
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 0px 14px 16px 14px;
+  }
+
+  summary {
+    color: v.$text-color;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    min-width: 648px;
+    padding: 14px 24px 14px 20px;
+    list-style: none;
+
+    .firstSummaryElement {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      & span:last-of-type {
+        opacity: 0.54;
+      }
+    }
+
+    .secondSummaryElement {
+      align-content: center;
+      align-items: center;
+      display: flex;
+      flex-direction: row;
+      gap: 12px;
+      justify-content: center;
+
+      .chevron {
+        transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .statusContainer {
+        align-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        gap: 4px;
+        
+        .statusCircle {
+          border-radius: 50%;
+          min-height: 6px;
+          min-width: 6px;
+
+          &.loading {
+            background-color: v.$primary;
+          }
+
+          &.offline {
+            background-color: v.$error;
+          }
+
+          &.online {
+            background-color: v.$success;
+          }
+        }
+      }
+    }
+  }
+}

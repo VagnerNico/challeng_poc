@@ -1,0 +1,20 @@
+@use "../../styles/_variables.scss" as v;
+
+.container {
+  align-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  justify-content: center;
+  padding: 60px 0;
+
+  & > div:first-of-type {
+    margin-bottom: 4px;
+  }
+
+  & > h1 {
+    color: v.$title-color;
+    width: 684px;
+  }
+}

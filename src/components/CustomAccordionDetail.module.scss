@@ -1,0 +1,18 @@
+@use "src/styles/_variables" as v;
+
+.contentChild {
+  background-color: rgba(0, 0, 0, 0.12);
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+
+  .contentChildId {
+    color: v.$primary;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    line-height: 16px;
+    text-transform: uppercase;
+  }
+}
